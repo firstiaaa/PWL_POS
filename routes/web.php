@@ -36,3 +36,7 @@ Route::post('/kategori', [KategoriController::class, 'store']);
 
 //create add button tugas no.1
 Route::get('/kategori/create', [KategoriController::class, 'create'])->name('/kategori/create');
+
+//create menu di navbar
+Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori.index');
+

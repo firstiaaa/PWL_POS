@@ -304,6 +304,7 @@ return [
             'type' => 'fullscreen-widget',
             'topnav_right' => true,
         ],
+        
 
         // Sidebar items:
         [
@@ -315,6 +316,12 @@ return [
             'url' => 'admin/blog',
             'can' => 'manage-blog',
         ],
+        [
+            'text' => 'Kategori',
+            'url' => '/kategori',
+            'icon' => 'fas fa-fw fa-list',
+        ],
+        
         [
             'text' => 'pages',
             'url' => 'admin/pages',
