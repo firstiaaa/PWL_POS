@@ -16,11 +16,11 @@
             <div class="card-body">
                 <div class="form-group">
                     <label for="kodeKategori">Kode Kategori</label>
-                    <input type="text" class="form-control" id="kodekategori" name="kodekategori" placeholder = "esfrg"
+                    <input type="text" class="form-control" id="kodekategori" name="kodekategori" placeholder = "Masukkan Kode"></input>
                     </div>
         <div class="form-group">
             <label for="namaKategori">Nama Kategori</label>
-                <input type="text" class="form-control" id="namaKategori" name="namaKategori" placeholder = "dscdv"
+                <input type="text" class="form-control" id="namaKategori" name="namaKategori" placeholder = "Masukkan Nama Kategori"></input>
                 </div>
             </div>
 
