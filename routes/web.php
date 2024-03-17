@@ -37,6 +37,11 @@ Route::post('/kategori', [KategoriController::class, 'store']);
 //create add button tugas no.1
 Route::get('/kategori/create', [KategoriController::class, 'create'])->name('/kategori/create');
 
-//create menu di navbar
+//create menu di navbar tugas no.2
 Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori.index');
+
+//create action edit tugas no.3
+Route::get('/kategori/edit/{id}', [KategoriController::class, 'edit'])->name('/kategori/edit');
+Route::put('/kategori/update/{id}', [KategoriController::class, 'update'])->name('/kategori/kategori_update');
+Route::get('/kategori/kategori_update', [KategoriController::class, 'kategori_update'])->name('kategori.kategori_update');
 

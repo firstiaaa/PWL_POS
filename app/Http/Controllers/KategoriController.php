@@ -46,4 +46,31 @@ class KategoriController extends Controller
         ]);
             return redirect('/kategori');
     }
+
+    //tugas jb 5
+
+    // Metode untuk menampilkan halaman edit kategori
+    public function edit($id)
+    {
+        $kategori = KategoriModel::find($id);
+        return view('kategori/kategori_update',['data' => $kategori]);
+    }
+
+    // Metode untuk menyimpan perubahan pada kategori
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'kodeKategori' => 'required|string|max:255',
+            'namaKategori' => 'required|string|max:255',
+            // Anda dapat menambahkan aturan validasi lainnya sesuai kebutuhan
+        ]);
+
+        $kategori = KategoriModel::find($id);
+
+        $kategori->kategori_kode = $request->kodeKategori;
+        $kategori->kategori_nama = $request->namaKategori;
+
+        $kategori->save();
+        return redirect('/kategori');
+    }
 }
