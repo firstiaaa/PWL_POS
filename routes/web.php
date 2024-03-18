@@ -45,3 +45,5 @@ Route::get('/kategori/edit/{id}', [KategoriController::class, 'edit'])->name('/k
 Route::put('/kategori/update/{id}', [KategoriController::class, 'update'])->name('/kategori/kategori_update');
 Route::get('/kategori/kategori_update', [KategoriController::class, 'kategori_update'])->name('kategori.kategori_update');
 
+//create action delete tugas no.4
+Route::get('/kategori/delete/{id}', [KategoriController::class, 'delete'])->name('/kategori/delete');
