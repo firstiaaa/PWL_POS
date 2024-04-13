@@ -329,6 +329,18 @@ return [
             'label' => 4,
             'label_color' => 'success',
         ],
+        [
+            'text' => 'Manage User',
+            'url' => '/user',
+            'icon' => 'fas fa-user-plus',
+            'label_color' => 'success',
+        ],
+        [
+            'text' => 'Manage Level',
+            'url' => '/level',
+            'icon' => 'fas fa-users',
+            'label_color' => 'success',
+        ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',

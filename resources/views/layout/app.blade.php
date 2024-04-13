@@ -1,17 +1,17 @@
-@extends('adminlte::page')
+@extends('adminlte::page') //
 
 {{-- Extend and customize the browser title --}}
 
-@section('title')
+@section('title')//
     {{ config('adminlte.title') }}
     @hasSection('subtitle') | @yield('subtitle') @endif
 @stop
-
-   @vite('resources/js/app.js')
+ 
+   @vite('resources/js/app.js') //
 
 {{-- Extend and customize the page content header --}}
 
-@section('content_header')
+@section('content_header')//
     @hasSection('content_header_title')
         <h1 class="text-muted">
             @yield('content_header_title')
@@ -35,7 +35,7 @@
 
 {{-- Create a common footer --}}
 
-@section('footer')
+@section('footer')//
     <div class="float-right">
         Version: {{ config('app.version', '1.0.0') }}
     </div>
@@ -52,7 +52,7 @@
 
 
 
-@push('js')
+@push('js')//
 <script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
 
 @endpush
@@ -62,7 +62,7 @@
 
 {{-- Add common CSS customizations --}}
 
-@push('css')
+@push('css') //
 <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.css" />
 
 <style type="text/css">
