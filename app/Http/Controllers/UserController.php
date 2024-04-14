@@ -17,26 +17,43 @@ class UserController extends Controller
         return view('user.create');  
      } 
   
-     public function store(Request $request)
+//      public function store(Request $request)
+// {
+//     $validated = $request->validate();
+
+//     $validated = $request->safe()->only(['username', 'nama', 'password', 'level_id']);
+//     $validated = $request->safe()->except(['username', 'nama', 'password', 'level_id']);
+
+//     // Simpan data pengguna ke dalam basis data
+//     UserModel::create([
+//         'username' => $request->username,
+//         'nama' => $request->nama,
+//         'password' => Hash::make($request->password),
+//         'level_id' => $request->level_id,
+//     ]);
+
+//     return redirect('/user');
+// }
+
+public function store(Request $request)
 {
-    // Melakukan validasi data
     $request->validate([
-        'username' => 'required',
-        'nama' => 'required',
-        'password' => 'required',
-        'level_id' => 'required|exists:m_level,level_id',
+        'username' => 'bail|required|string|max:255',
+        'nama' => 'bail|required|string|max:255',
+        'password' => 'bail|required|string|max:255',
+        'level_id' => 'bail|required|string|max:255',
     ]);
 
-    // Simpan data pengguna ke dalam basis data
     UserModel::create([
         'username' => $request->username,
-        'nama' => $request->nama,
-        'password' => Hash::make($request->password),
-        'level_id' => $request->level_id,
+            'nama' => $request->namaUser,
+            'password' => Hash::make($request->password),
+            'level_id' => $request->level_id,
     ]);
 
-    return redirect()->route('user.index')->with('success', 'User berhasil ditambahkan');
+    return redirect('/user');
 }
+
 
  
     public function edit($id) 

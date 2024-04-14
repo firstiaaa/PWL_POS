@@ -24,13 +24,14 @@ Route::get('/level', [LevelController::class, 'index']);
 Route::get('/kategori', [KategoriController::class, 'index']);
 Route::get('/user' , [UserController::class, 'index']);
 
-Route::get('/user/tambah', [UserController::class, 'tambah']);
-Route::post('/user/tambah_simpan', [UserController::class, 'tambah_simpan']);
-Route::get('/user/ubah/{id}', [UserController::class, 'ubah']);
-Route::put('/user/ubah_simpan/{id}', [UserController::class, 'ubah_simpan']);
-Route::get('/user/hapus/{id}', [UserController::class, 'hapus']);
-Route::get('/kategori', [KategoriController::class, 'index']);
+// Route::get('/user/tambah', [UserController::class, 'tambah']);
+// Route::post('/user/tambah_simpan', [UserController::class, 'tambah_simpan']);
+// Route::get('/user/ubah/{id}', [UserController::class, 'ubah']);
+// Route::put('/user/ubah_simpan/{id}', [UserController::class, 'ubah_simpan']);
+// Route::get('/user/hapus/{id}', [UserController::class, 'hapus']);
+// Route::get('/kategori', [KategoriController::class, 'index']);
 
+//Create Kategori js6 
 Route::get('/kategori/create', [KategoriController::class, 'create']);
 Route::post('/kategori', [KategoriController::class, 'store']);
 
@@ -63,3 +64,5 @@ Route::post('/level', [LevelController::class, 'store']);
 Route::get('/level/edit/{id}', [LevelController::class, 'edit'])->name('/level/edit'); 
 Route::put('/level/{id}', [LevelController::class, 'edit_simpan'])->name('/level/edit_simpan'); 
 Route::get('/level/delete/{id}', [LevelController::class, 'delete'])->name('/level/delete'); 
+
+//Create 

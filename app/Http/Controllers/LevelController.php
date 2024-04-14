@@ -35,12 +35,15 @@ class LevelController extends Controller
  
     public function store(Request $request) 
     { 
-        LevelModel::create([ 
-            'level_kode' => $request->level_kode, 
-            'level_nama' => $request->level_nama, 
-        ]); 
- 
-        return redirect('/level'); 
+        $request->validate([
+            'level_kode' => 'bail|required|string|max:255',
+            'level_nama' => 'bail|required|string|max:255',
+        ]);
+        LevelModel::create([
+            'level_kode' => $request->level_kode,
+            'level_nama' => $request->level_nama,
+        ]);
+        return redirect('/level');
     } 
  
     public function edit($id) 
