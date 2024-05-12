@@ -197,8 +197,6 @@ class TransaksiPenjualanController extends Controller
         return redirect('/penjualan')->with('success', 'Data penjualan berhasil diperbarui');
     }
 
-
-
     //Menghapus data barang
     public function destroy(string $id)
     {

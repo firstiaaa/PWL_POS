@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\KategoriController;
 use App\Http\Controllers\Api\LevelController;
 use App\Http\Controllers\Api\RegisterController;
 use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\TransaksiPenjualanController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -64,3 +65,10 @@ Route::delete('barang/{barang}', [BarangController::class, 'destroy']);
 
 //js 11
 Route::post('/register1', App\Http\Controllers\Api\RegisterController::class)->name('register1');
+
+//transaksi penjualan
+Route::get('penjualan', [TransaksiPenjualanController::class, 'index']);
+Route::post('penjualan', [TransaksiPenjualanController::class, 'store']);
+Route::get('penjualan/{penjualan}', [TransaksiPenjualanController::class, 'show']);
+Route::put('penjualan/{penjualan}', [TransaksiPenjualanController::class, 'update']);
+Route::delete('penjualan/{penjualan}', [TransaksiPenjualanController::class, 'destroy']);
