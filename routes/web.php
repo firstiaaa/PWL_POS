@@ -8,11 +8,12 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\POSController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WelcomeController;
-use Monolog\Level;
-use App\Http\Controllers\BarangController;
+//use Monolog\Level;
 use App\Http\Controllers\ManagerController;
+use App\Http\Controllers\BarangController; 
 use App\Http\Controllers\StokController;
 use App\Http\Controllers\TransaksiPenjualanController;
+use App\Http\Controllers\FileUploadController;
 
 
 
@@ -99,16 +100,16 @@ Route::group(['prefix' => 'user'], function () {
 
 //Tugas
 //Fitur Barang
-Route::group(['prefix' => 'barang'], function () {
-    Route::get('/', [BarangController::class, 'index']); // menampilkan halaman awal Barang
-    Route::post('/list', [BarangController::class, 'list']); // menampilkan data Barang dalam bentuk json untuk datatables
-    Route::get('/create', [BarangController::class, 'create']);  // menampilkan halaman form tambah Barang 
-    Route::post('/', [BarangController::class, 'store']); // menyimpan data Barang baru
-    Route::get('/{id}', [BarangController::class, 'show']); // menampilkan detail Barang
-    Route::get('/{id}/edit', [BarangController::class, 'edit']); // menampilkan halaman form edit Barang
-    Route::put('/{id}', [BarangController::class, 'update']);  // menyimpan perubahan data Barang
-    Route::delete('/{id}', [BarangController::class, 'destroy']); // menghapus data user
-});
+// Route::group(['prefix' => 'barang'], function () {
+//     Route::get('/', [BarangController::class, 'index']); // menampilkan halaman awal Barang
+//     Route::post('/list', [BarangController::class, 'list']); // menampilkan data Barang dalam bentuk json untuk datatables
+//     Route::get('/create', [BarangController::class, 'create']);  // menampilkan halaman form tambah Barang 
+//     Route::post('/', [BarangController::class, 'store']); // menyimpan data Barang baru
+//     Route::get('/{id}', [BarangController::class, 'show']); // menampilkan detail Barang
+//     Route::get('/{id}/edit', [BarangController::class, 'edit']); // menampilkan halaman form edit Barang
+//     Route::put('/{id}', [BarangController::class, 'update']);  // menyimpan perubahan data Barang
+//     Route::delete('/{id}', [BarangController::class, 'destroy']); // menghapus data user
+// });
 
 //Fitur Kategori
 Route::group(['prefix' => 'kategori'], function () {
@@ -178,3 +179,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('manager', ManagerController::class);
     });
 });
+
+//js 12
+Route::get('file-upload', [FileUploadController::class,'fileUpload']);
+Route::post('file-upload', [FileUploadController::class,'prosesFileUpload']);
