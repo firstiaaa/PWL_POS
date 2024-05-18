@@ -9,26 +9,26 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  
 class BarangModel extends Model 
 { 
-    use HasFactory; 
- 
-    protected $table = 'm_barang'; //mendefiniskan nama tabel yang digunakan oleh model ini 
-    protected $primaryKey = 'barang_id'; //mendefiniskan primary key dari tabel yang digunakan 
- 
-    protected $fillable =  
-        ['kategori_id', 
-        'barang_kode', 
+    use HasFactory;
+
+    protected $table = 'm_barang';
+    protected $primaryKey = 'barang_id';
+
+    protected $fillable = ['kategori_id',
+        'barang_kode',
         'barang_nama', 
         'harga_beli', 
         'harga_jual', 
-        'image' 
-    ]; 
+        'created_at', 
+        'updated_at', 
+        'image']; 
  
-    protected function image(): Attribute 
-    { 
-        return Attribute::make( 
-            get: fn ($image) => url('/storage/posts/' . $image), 
-        ); 
-    } 
+    // protected function image(): Attribute 
+    // { 
+    //     return Attribute::make( 
+    //         get: fn ($image) => url('/storage/posts/' . $image), 
+    //     ); 
+    // } 
  
     public function kategori(): BelongsTo 
     { 
